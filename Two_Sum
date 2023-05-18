@@ -1,0 +1,18 @@
+class Solution(object):
+    def twoSum(self, nums, target): #class def provided by leetcode
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+	
+        # My solution starts here
+	
+        complementDict = dict() 
+        for i in range(len(nums)): # Itrate over length of list nums
+            num = nums[i]
+            complementVal = target - num # gets the complement of present value
+            if num in complementDict:    
+                return [complementDict[num], i] # returns index of the other complement and current complement if present
+            else:
+                complementDict[complementVal] = i #or store the current complement and index of the current value having the complement
